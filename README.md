@@ -1,5 +1,7 @@
 # Toy-Robot-Simulator-in-IONIC
 
+<img width="359" alt="Screen Shot 2020-12-20 at 12 31 03 PM" src="https://user-images.githubusercontent.com/30233097/102707247-4c3a2d80-42bf-11eb-85e4-e360226153b4.png">
+
 
 ● The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units.
 
