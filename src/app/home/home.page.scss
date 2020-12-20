@@ -1,0 +1,54 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+ion-col {
+  // border-color: black; 
+  // border-width: .01em; 
+  // border-style:solid; 
+  // margin-bottom : -1px;
+  // background-color: lightgrey
+}
+
+.even_box{
+  background: #8f92e0;
+}
+
+.odd_box{
+  background: #cfedff;
+}
+
+.robot_east{
+  transform: rotate(0deg);
+}
+.robot_south{
+  transform: rotate(90deg);
+}
+.robot_north{
+  transform: rotate(-90deg);  
+}
+.robot_west{
+  transform: rotate(-180deg);  
+}

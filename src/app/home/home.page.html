@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Toy Robot Simulator
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="text-align: center;">
+    <ion-grid>
+      <ion-row *ngFor ="let a of row;let i = index" style="height: 60px;">
+          <ion-col *ngFor="let b of column;let j = index;" 
+          [ngClass]="(a+b)%2==0?'even_box':'odd_box'"
+          id="{{a}}{{b}}{{current_coordinate}}"
+          >
+          <div *ngIf="current_coordinate==[a,b]">
+          <ion-icon  [ngClass]="robot_direction" id="{{a}}{{b}}" class="icon_robot " name='walk-outline' style='font-size: xxx-large;'></ion-icon>
+        </div>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  <ion-input placeholder="Tell Robot what to do" 
+  style="border: solid 1px #ccc;height: 60px;
+  text-align: left;
+  border-radius: 5px;"
+  [(ngModel)]="inputValue"
+  ></ion-input>
+  <ion-buttons slot="primary">
+    <ion-button color="secondary" style="width: 50%;" (click)="submitDecision(inputValue)">
+    SUBMIT
+    </ion-button>
+    <ion-button color="secondary" style="width: 50%;" (click)="resetBoard()">
+      RESET
+      </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="primary">
+    <ion-button color="secondary" style="width: 50%;" (click)="moveRobot('LEFT')">
+    LEFT
+    </ion-button>
+    <ion-button color="secondary" style="width: 50%;" (click)="moveRobot('RIGHT')">
+      RIGHT
+      </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="primary">
+    <ion-button color="secondary" style="width: 50%;" (click)="moveRobot('MOVE')">
+    MOVE
+    </ion-button>
+    <ion-button color="secondary" style="width: 50%;" (click)="showReport()">
+      Report
+      </ion-button>
+  </ion-buttons>
+  <div>
+    <ion-label *ngFor ="let a of command_array;let i = index" color="primary" style="display: block;">{{a}}</ion-label>
+  </div>
+  <ion-label *ngIf="show_data" color="primary">Output : {{state}}</ion-label>
+  </div>
+</ion-content>
